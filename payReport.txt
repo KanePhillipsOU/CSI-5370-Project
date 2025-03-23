@@ -30,6 +30,11 @@ Employee ID: 123
 Pay Percentage: 70%
 Earned this pay period: 2924.47
 
-Total amount paid to employees this period: 18932.85
+Employee Name: Dave
+Employee ID: 144
+Pay Percentage: 70%
+Earned this pay period: 4272.83
 
-End of report.
+Total amount paid to employees this period: 23205.68
+
+--- End of report. ---
