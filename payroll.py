@@ -7,36 +7,57 @@ def CalculatePay(employee, insuranceOne, insuranceTwo, insuranceThree):
         float(insuranceTwo.getPay())) + (float(employee.getHoursThree()) * float(insuranceThree.getPay()))
     return employee_pay
 
+# Function to format output
+def FormatOutput(employeeList, payList):
+    with open("payReport.txt", 'w') as f:
+        f.write("--- Pay Report for all employees this period ---\n\n")
+        totalPay = 0
+        k = 0
+        for obj in employeeList:
+            f.write("Employee Name: " + obj.getName() + "\n")
+            f.write("Employee ID: " + obj.getID() + "\n")
+            f.write("Pay Percentage: " + obj.getPercent() + "%" + "\n")
+            f.write("Earned this pay period: " + f"{payList[k]:.2f}" + "\n\n")
+            totalPay += payList[k]
+            k += 1
+        f.write("Total amount paid to employees this period: " + f"{totalPay:.2f}" + "\n\n")
+        f.write("--- End of report. ---")
+    return
+
 # Create empty list for employees
 employees = []
+insurances = []
 
 # Read lines in employee file and instantiate a class with those values
 with open('employees.txt', 'r') as file:
     for line in file:
         #print(line.strip()) <----debug
         currentEmployee = line.split()
-        i = 0
         #print(currentEmployee) <----debug
         employee = classes.Employee(currentEmployee[0], currentEmployee[1], currentEmployee[2], \
             currentEmployee[3], currentEmployee[4], currentEmployee[5])
         employees.append(employee)
 
-#Check that list has employees stored for debugging
-# for obj in employees:
-#     print(obj.getName())
+# Read lines in insurance file and instantiate a class with those values
+with open('insurances.txt', 'r') as file:
+    for line in file:
+        currentInsurance = line.split()
+        insurance = classes.Insurance(currentInsurance[0], currentInsurance[1])
+        insurances.append(insurance)
 
-
-# Hard-coded employees and insurances
+# Assign objects in lists to variables
 Mike = employees[0]
 Debra = employees[1]
+InsureOne = insurances[0]
+InsureTwo = insurances[1]
+InsureThree = insurances[2]
 
-# TO-DO************: Import insurance list from txt file like employees
-InsureOne = classes.Insurance("One", 134.29)
-InsureTwo = classes.Insurance("Two", 147.23)
-InsureThree = classes.Insurance("Three", 75.34)
+# Calculate pay for employees
+payList = []
+for obj in employees:
+    payList.append(CalculatePay(obj, InsureOne, InsureTwo, InsureThree))
 
-mike_pay = CalculatePay(Mike, InsureOne, InsureTwo, InsureThree)
-debra_pay = CalculatePay(Debra, InsureOne, InsureTwo, InsureThree)
-
-print("Mike's pay is: " + str(mike_pay))
-print("Debra's pay is: " + str(debra_pay))
+print("Generating pay report for employees...")
+FormatOutput(employees, payList)
+ 
+print("Report generates please see 'payReport.txt'.")
