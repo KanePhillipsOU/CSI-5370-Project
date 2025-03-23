@@ -60,4 +60,4 @@ for obj in employees:
 print("Generating pay report for employees...")
 FormatOutput(employees, payList)
  
-print("Report generates please see 'payReport.txt'.")
+print("Report generated, please see 'payReport.txt'.")
