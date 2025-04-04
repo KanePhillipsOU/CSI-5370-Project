@@ -5,7 +5,12 @@ def CalculatePay(employee, insuranceOne, insuranceTwo, insuranceThree):
     # Cast as floats because there was an error where object reference had issues when sourced from list
     employee_pay = (float(employee.getPercent())/100)*((float(employee.getHoursOne()) * float(insuranceOne.getPay())) + (float(employee.getHoursTwo()) * \
         float(insuranceTwo.getPay())) + (float(employee.getHoursThree()) * float(insuranceThree.getPay())))
-    return f"{employee_pay:.2f}"
+    if employee_pay >= 0:
+        return f"{employee_pay:.2f}"
+    else:
+        return f"{0:.2f}"
+    
+    
 
 # Function to format output
 def FormatOutput(employeeList, payList):
