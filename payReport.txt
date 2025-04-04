@@ -3,38 +3,38 @@
 Employee Name: Mike
 Employee ID: 312
 Pay Percentage: 75%
-Earned this pay period: 2197.23
+Earned this pay period: 1647.92
 
 Employee Name: Debra
 Employee ID: 476
 Pay Percentage: 80%
-Earned this pay period: 3077.74
+Earned this pay period: 2462.19
 
 Employee Name: Steve
 Employee ID: 972
 Pay Percentage: 65%
-Earned this pay period: 3568.60
+Earned this pay period: 2319.59
 
 Employee Name: Angela
 Employee ID: 111
 Pay Percentage: 70%
-Earned this pay period: 3813.89
+Earned this pay period: 2669.72
 
 Employee Name: Donald
 Employee ID: 654
 Pay Percentage: 70%
-Earned this pay period: 3350.92
+Earned this pay period: 2345.64
 
 Employee Name: Michelle
 Employee ID: 123
 Pay Percentage: 70%
-Earned this pay period: 2924.47
+Earned this pay period: 2047.13
 
 Employee Name: Dave
 Employee ID: 144
 Pay Percentage: 70%
-Earned this pay period: 4272.83
+Earned this pay period: 2990.98
 
-Total amount paid to employees this period: 23205.68
+Total amount paid to employees this period: 16483.17
 
 --- End of report. ---

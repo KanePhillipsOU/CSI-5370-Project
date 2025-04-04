@@ -3,9 +3,9 @@ import classes
 # Function to calculate pay of employee using insurances
 def CalculatePay(employee, insuranceOne, insuranceTwo, insuranceThree):
     # Cast as floats because there was an error where object reference had issues when sourced from list
-    employee_pay = (float(employee.getHoursOne()) * float(insuranceOne.getPay())) + (float(employee.getHoursTwo()) * \
-        float(insuranceTwo.getPay())) + (float(employee.getHoursThree()) * float(insuranceThree.getPay()))
-    return employee_pay
+    employee_pay = (float(employee.getPercent())/100)*((float(employee.getHoursOne()) * float(insuranceOne.getPay())) + (float(employee.getHoursTwo()) * \
+        float(insuranceTwo.getPay())) + (float(employee.getHoursThree()) * float(insuranceThree.getPay())))
+    return f"{employee_pay:.2f}"
 
 # Function to format output
 def FormatOutput(employeeList, payList):
@@ -17,8 +17,8 @@ def FormatOutput(employeeList, payList):
             f.write("Employee Name: " + obj.getName() + "\n")
             f.write("Employee ID: " + obj.getID() + "\n")
             f.write("Pay Percentage: " + obj.getPercent() + "%" + "\n")
-            f.write("Earned this pay period: " + f"{payList[k]:.2f}" + "\n\n")
-            totalPay += payList[k]
+            f.write("Earned this pay period: " + f"{float(payList[k]):.2f}" + "\n\n")
+            totalPay += float(payList[k])
             k += 1
         f.write("Total amount paid to employees this period: " + f"{totalPay:.2f}" + "\n\n")
         f.write("--- End of report. ---")
