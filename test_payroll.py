@@ -1,5 +1,3 @@
-
-
 import os
 import pytest
 from payroll import CalculatePay, FormatOutput
